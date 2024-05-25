@@ -7,6 +7,7 @@ app = FastAPI()
 origins = [
     "http://localhost:3000",
     "http://localhost:8080",
+    "https://vertexfinance.vercel.app",
 ]
 
 app.add_middleware(
