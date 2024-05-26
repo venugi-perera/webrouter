@@ -23,6 +23,10 @@ class PredictCaloriesItem(BaseModel):
 with open(os.path.join(model_path, 'model.pkl'), 'rb') as f:
     model = pickle.load(f)
 
+@router.get("/")
+def read_root():
+    return {"Hello": "World"}
+
 @router.post('/predict')
 async def predict_calories(item: PredictCaloriesItem):
     df = pd.DataFrame([item.dict()])
